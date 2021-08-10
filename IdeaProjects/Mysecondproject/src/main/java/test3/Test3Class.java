@@ -109,7 +109,6 @@ public class Test3Class {
         for (int ll = a2.length-1; ll>=0; ll--)
             System.out.print(a2[ll] + " ");
 
-
     }
 }
 
