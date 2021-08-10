@@ -19,11 +19,11 @@ public class Test3Class {
         Обозначается n, произносится «эн-факториал».Например !3 = 1*2*3 */
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите число:");
+        System.out.println("Введите натуральное число:");
 
         if (sc.hasNextInt()) {
             int number = sc.nextInt();
-            int res = 1;
+            long res = 1;
             if (number <= 0) {
                 System.out.println("Извините, Вы ввели не натуральное число. Перезапустите программу и попробуйте снова!");
             } else {
@@ -40,7 +40,7 @@ public class Test3Class {
         /*Task3: Выведите на экран все положительные делители натурального числа,
         введённого пользователем с клавиатуры*/
         Scanner sc1 = new Scanner(System.in);
-        System.out.println("Введите число:");
+        System.out.println("Введите натуральное число:");
 
         if (sc1.hasNextInt()) {
             int number1 = sc1.nextInt();
@@ -53,11 +53,34 @@ public class Test3Class {
                         System.out.print(j + "; ");
                     }
                 }
+                System.out.println();
             }
         } else {
             System.out.println("Извините, но это явно не число. Перезапустите программу и попробуйте снова!");
         }
 
+        /*Task4: Для введённого пользователем с клавиатуры натурального числа посчитайте сумму всех его цифр
+        (заранее не известно сколько цифр будет в числе)*/
+        Scanner sc2 = new Scanner(System.in);
+        System.out.println("Введите натуральное число:");
+
+        if (sc2.hasNextInt()) {
+            int number2 = sc2.nextInt();
+            if (number2 <= 0) {
+                System.out.println("Извините, Вы ввели не натуральное число. Перезапустите программу и попробуйте снова!");
+            } else {
+                int sum = 0;
+                int num = number2;
+                while (num > 0) {
+                    sum = sum + num % 10;
+                    num = num / 10;
+                }
+                System.out.println("Спасибо! Вы ввели число " + number2);
+                System.out.println("Сумма всех цифр вашего числа равна " + sum);
+            }
+        } else {
+            System.out.println("Извините, но это явно не число. Перезапустите программу и попробуйте снова!");
+        }
     }
 }
 
