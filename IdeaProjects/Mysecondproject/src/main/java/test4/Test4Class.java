@@ -13,11 +13,25 @@ public class Test4Class {
    Заменить все символы “а” на “о”.
    Преобразуйте строку к верхнему регистру.
    Преобразуйте строку к нижнему регистру.
-   Вырезать строку Java c помощью метода String.substring()*/
+   Вырезать строку Java c помощью метода String.substring()
+   2. Список студентов
+   Создать строку, используя форматирование: Студент [Фамилия] получил [оценка] по [предмету].
+   Форматирование и вывод строки на консоль написать в отдельном методе, который принимает фамилию, оценку и название предмета в качестве параметров.
+   Выделить под фамилию 15 символов, под оценку 3 символа, под предмет – 10.
+   Пример вывода:
+   Студент Иванов            получил 5   по Математике
+   Студент Петрова         получил 4   по Физике
+   Студент Сидорова        получил 3   по Программированию
+   3. Слово с минимальным числом символов
+   Найти слово, в котором число различных символов минимально. Слово может содержать буквы и цифры.
+   Если таких слов несколько, найти первое из них.
+   Например, в строке "fffff ab f 1234 jkjk" найденное слово должно быть "fffff".*/
 
     public static void main(String[] args) {
         String a = "I like Java!!!";
         Test4Class b = new Test4Class();
+        String[][] arr = {{"Иванов", "5", "Математике"}, {"Петров", "4", "Физике"}, {"Сидоров", "3", "Программированию"}};
+        String text = "fwrrfff abc f ccc 1234 jkjk";
         anyStr(a);
         prnLast(a);
         b.compWithEnd(a);
@@ -28,8 +42,12 @@ public class Test4Class {
         lowStr(a);
         upStr(a);
         subStr(a);
+        formatPrn(arr);
+        minChar(text);
+
     }
 
+    //Задача 1
     public static void anyStr(String str) {
 
         System.out.println("This method takes any string: " + "\"" + str + "\"");
@@ -61,8 +79,10 @@ public class Test4Class {
     public static void compStr(String str) {
         boolean retVal = str.contains("Java");
         if (retVal) {
-            System.out.printf("%S%n","The string: " + "\"" + str + "\"" + " contains " + "\"" + "Java" + "\"");
-        } else System.out.printf("%S%n","The string: " + "\"" + str + "\"" + " does not contain " + "\"" + "Java" + "\"");
+            //захотелось поэксперементировать с System.out.printf
+            System.out.printf("%S%n", "The string: " + "\"" + str + "\"" + " contains " + "\"" + "Java" + "\"");
+        } else
+            System.out.printf("%S%n", "The string: " + "\"" + str + "\"" + " does not contain " + "\"" + "Java" + "\"");
     }
 
     public static void findStr(String str) {
@@ -74,7 +94,7 @@ public class Test4Class {
         String newStr = str.replaceAll("a", "o");
         System.out.print("After changing all " + "\"" + "a" + "\"");
         System.out.print(" in string " + "\"" + str + "\"" + " to " + "\"" + "o" + "\"");
-        System.out.printf("%s%n"," the new string is " + "\"" + newStr + "\"");
+        System.out.printf("%s%n", " the new string is " + "\"" + newStr + "\"");
 
     }
 
@@ -89,8 +109,46 @@ public class Test4Class {
     }
 
     public static void subStr(String str) {
-       System.out.println("Substring from 7 to 11 character: " + str.substring(7,11));
+        System.out.println("Substring from 7 to 11 character: " + str.substring(7, 11));
     }
+
+    //Задача 2
+    public static void formatPrn(String[][] arr) {
+        String specifier = "Студент %-15s получил %-3s по %-10s%n";
+        for (int i = 0; i < 3; i++) {
+            String fs = String.format(specifier, arr[i][0], arr[i][1], arr[i][2]);
+            System.out.print(fs);
+            // можно сделать это короче System.out.format(specifier, arr[i][0], arr[i][1], arr[i][2]);
+        }
+    }
+
+    //Задача 3
+    public static void minChar(String text) {
+        String[] words = text.split(" ");
+        int minChar = 0;
+        int k = 0;
+        char charStart;
+        char[] wordCurrent;
+        for (String word : words) {
+            charStart = word.charAt(0);
+            wordCurrent = word.toCharArray();
+
+            for (int i = 0; i < wordCurrent.length; i++) {
+                if (wordCurrent[i] != charStart) {
+                    k = k+1;
+                }
+            }
+            if (k<=minChar){
+                System.out.println(wordCurrent);
+                break;
+            }
+            else {
+                minChar = k;
+                k=0;
+            }
+        }
+    }
+
 }
 
 
