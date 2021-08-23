@@ -31,7 +31,7 @@ public class Test4Class {
         String a = "I like Java!!!";
         Test4Class b = new Test4Class();
         String[][] arr = {{"Иванов", "5", "Математике"}, {"Петров", "4", "Физике"}, {"Сидоров", "3", "Программированию"}};
-        String text = "fwrrfff abc f ccc 1234 jkjk";
+        String text = "ffffff abc f ccc 1234 jkjk";
         anyStr(a);
         prnLast(a);
         b.compWithEnd(a);
@@ -125,31 +125,40 @@ public class Test4Class {
     //Задача 3
     public static void minChar(String text) {
         String[] words = text.split(" ");
-        int minChar = 0;
+        int[] minChar = new int[words.length];
+        int min = Integer.MAX_VALUE;
         int k = 0;
         char charStart;
         char[] wordCurrent;
+
         for (String word : words) {
             charStart = word.charAt(0);
             wordCurrent = word.toCharArray();
-
+            minChar[k] = 0;
             for (int i = 0; i < wordCurrent.length; i++) {
                 if (wordCurrent[i] != charStart) {
-                    k = k+1;
+                    minChar[k]++;
                 }
             }
-            if (k<=minChar){
-                System.out.println(wordCurrent);
+            k++;
+        }
+
+        for (int j = 0; j < minChar.length; j++) {
+
+            min = Math.min(min, minChar[j]);
+        }
+        for (int i = 0; i < minChar.length; i++) {
+
+            if (minChar[i] == min) {
+                k = i;
                 break;
             }
-            else {
-                minChar = k;
-                k=0;
-            }
         }
+        System.out.printf("Слово с минимальным числом различающихся символов из последовательности %s - это %s", text, words[k]);
     }
 
 }
+
 
 
 
