@@ -131,10 +131,12 @@ public class Test4Class {
         char charStart;
         char[] wordCurrent;
 
+        //нахожу количество различющихся симоволов для каждого слова
         for (String word : words) {
             charStart = word.charAt(0);
             wordCurrent = word.toCharArray();
             minChar[k] = 0;
+
             for (int i = 0; i < wordCurrent.length; i++) {
                 if (wordCurrent[i] != charStart) {
                     minChar[k]++;
@@ -143,15 +145,16 @@ public class Test4Class {
             k++;
         }
 
+       //нахожу минимальное количество различющихся симоволов
         for (int j = 0; j < minChar.length; j++) {
 
             min = Math.min(min, minChar[j]);
         }
+        //нахожу индекс слова с минимальным числом различющихся символов
         for (int i = 0; i < minChar.length; i++) {
-
             if (minChar[i] == min) {
-                k = i;
-                break;
+               k = i;
+               break;
             }
         }
         System.out.printf("Слово с минимальным числом различающихся символов из последовательности %s - это %s", text, words[k]);
