@@ -4,8 +4,11 @@ public class Test5Class {
 
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        String str = "принтянрjояk";
         sumOffAllEvenNumbers(array);
         sumOffAllEvenIndexes(array);
+        lookForFirstChar(str);
+        lookForLastChar(str);
 
     }
 /*
@@ -27,7 +30,7 @@ public class Test5Class {
                 System.out.print(array[i] + ", ");
             }
         }
-       System.out.println("\nСумма всех четных элементов массива равна: " + sumEven);
+        System.out.println("\nСумма всех четных элементов массива равна: " + sumEven);
     }
 
     public static void sumOffAllEvenIndexes(int[] array) {
@@ -39,6 +42,32 @@ public class Test5Class {
             }
         }
         System.out.println("\nСумма индексов всех четных элементов массива равна: " + sumEven);
+    }
+
+    public static void lookForFirstChar(String str) {
+        char[] charArray;
+        charArray = str.toCharArray();
+        int numberPlace = 0;
+        for (int i = 0; i < charArray.length; i++) {
+            if (charArray[i] == 'я') {
+                numberPlace = i + 1;
+                System.out.println("Первая буква \"я\" стоит под " + numberPlace + " номером в строке " + "\"" + str + "\"");
+                break;
+            }
+        }
+    }
+
+    public static void lookForLastChar(String str) {
+        char[] charArray;
+        charArray = str.toCharArray();
+        int numberPlace = 0;
+        for (int i = charArray.length - 1; i > -1; i--) {
+            if (charArray[i] == 'я') {
+                numberPlace = i + 1;
+                System.out.println("Последняя буква \"я\" стоит под " + numberPlace + " номером в строке " + "\"" + str + "\"");
+                break;
+            }
+        }
     }
 
 
