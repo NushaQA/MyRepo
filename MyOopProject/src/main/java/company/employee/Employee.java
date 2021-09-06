@@ -6,11 +6,22 @@ public abstract class Employee {
     protected String jobTitle;
     protected double salary;
 
+
+    public Employee(String name, String jobTitle, double salary){
+
+       this.name = name;
+       this.jobTitle = jobTitle;
+       this.salary = salary;
+
+    }
+
     public String getName() {
+
         return name;
     }
 
     public String getJobTitle() {
+
         return jobTitle;
     }
 
