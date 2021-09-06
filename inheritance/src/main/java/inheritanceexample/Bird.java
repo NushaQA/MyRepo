@@ -3,7 +3,11 @@ package inheritanceexample;
 public abstract class Bird {
     protected String color;
 
-    public Bird(String color) {
+    protected Bird() {
+
+    }
+
+    protected Bird(String color) {
 
         this.color = color;
     }
