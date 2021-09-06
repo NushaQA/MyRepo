@@ -4,6 +4,7 @@ public class Sparrow extends Bird {
     private String country;
 
     public Sparrow(String color) {
+
         super(color);
     }
 
