@@ -7,27 +7,25 @@ public class QA extends Employee {
     private String typeQa; //Manual or Automation
 
     public QA(String name, String jobTitle, double salary) {
-
         super(name, jobTitle, salary);
-
     }
 
     public QA(String name, String jobTitle, double salary, String typeQa) {
-
         super(name, jobTitle, salary);
         this.typeQa = typeQa;
-
     }
 
-    public QA(String name, String jobTitle, double salary) {
+    public String getTypeQa() {
+        return typeQa;
+    }
 
-        super(name, jobTitle, salary);
-
+    public void setTypeQa(String language) {
+        this.typeQa = typeQa;
     }
 
     @Override
     public void work() {
-        System.out.println("Тестят");
+        System.out.println("QA is responsible for verification");
     }
 
     @Override
@@ -37,6 +35,16 @@ public class QA extends Employee {
                 return true;
             default:
                 return false;
+        }
+    }
+
+    @Override
+    public void vacationcomplete (int duration) {
+        if (duration >=26) {
+            System.out.println("Vacation is completed");
+        }
+        else {
+            System.out.println("Vacation is still not completed");
         }
     }
 
