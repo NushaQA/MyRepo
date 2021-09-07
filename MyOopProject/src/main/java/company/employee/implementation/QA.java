@@ -19,7 +19,7 @@ public class QA extends Employee {
         return typeQa;
     }
 
-    public void setTypeQa(String language) {
+    public void setTypeQa(String typeQa) {
         this.typeQa = typeQa;
     }
 
