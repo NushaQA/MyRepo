@@ -12,9 +12,9 @@ public class Book implements Printable {
         }
     }
 
-    public void print (){
-        System.out.println(Printable.PrintText + "books");
+
+    @Override
+    public void print() {
+        System.out.println(Printable.PrintText + "\"Book\"");
     }
-
-
 }

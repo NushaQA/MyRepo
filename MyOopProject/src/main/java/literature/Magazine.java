@@ -11,9 +11,9 @@ public class Magazine implements Printable {
             }
         }
     }
-
+    @Override
     public void print (){
-        System.out.println(Printable.PrintText + "magazines");
+        System.out.println(Printable.PrintText + "\"Magazine\"");
 
 
     }
