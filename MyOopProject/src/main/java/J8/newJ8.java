@@ -1,12 +1,18 @@
 package J8;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.*;
 
 public class newJ8 {
 
       public static void main(String[] args) {
-        List<Integer> list1 = List.of (10,15,16); //Integer i = new Integer (10); List.of (i,15,16);
+          long count = Arrays.asList(-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5).stream().filter(w -> w > 0).count();
+          System.out.println(count);
+
+        List<Integer> list1 = Arrays.asList(10, 15, 16); //Integer i = new Integer (10); List.of (i,15,16);
+        list1.set(1,11);
         list1.forEach(System.out::println);
         Integer i = 4; //boxing
         int a = i; //unboxing
