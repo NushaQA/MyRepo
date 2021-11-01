@@ -21,6 +21,8 @@ public class StremU {
             return (Stream<String>) Arrays.asList(split).stream();
         }).forEach(System.out::println);*/
 
+
+
     }
 
     }
