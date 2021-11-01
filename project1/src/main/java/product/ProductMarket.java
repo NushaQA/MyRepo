@@ -8,11 +8,14 @@ public class ProductMarket {
 
     List<Product> products;
 
-    public ProductMarket(List<Product> products) {
+    public ProductMarket(
+            List<Product> products) {
+
         this.products = products;
     }
 
     public List<Product> getProducts() {
+
         return products;
     }
 
@@ -55,6 +58,7 @@ public class ProductMarket {
                 .map(Product::getName)
                 .collect(Collectors.toList());
     }
+
 
 
 }
