@@ -27,14 +27,14 @@ public class ProductMarket {
 
     public List<Integer> getAllPricePositive() {
         return products.stream()
-                .filter(x->x.getPrice()>0)
+                .filter(x -> x.getPrice() > 0)
                 .map(Product::getPrice)
                 .collect(Collectors.toList());
     }
 
     public List<Integer> getAllPriceNegative() {
         return products.stream()
-                .filter(x->x.getPrice()<0)
+                .filter(x -> x.getPrice() < 0)
                 .map(Product::getPrice)
                 .collect(Collectors.toList());
     }
@@ -58,7 +58,5 @@ public class ProductMarket {
                 .map(Product::getName)
                 .collect(Collectors.toList());
     }
-
-
 
 }
