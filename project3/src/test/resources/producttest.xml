@@ -4,20 +4,18 @@
     <test name="Product and ProductMarket Tests" >
         <groups>
             <define name="testgetter"/>
+            <define name="prices"/>
+            <define name="names"/>
             <run>
                 <include name="testgetter"/>
-            </run>
-        </groups>
-        <groups>
-            <define name="prices"/>
-            <run>
                 <include name="prices"/>
+                <include name="names"/>
             </run>
-        </groups>
+           </groups>
         <classes>
-            <class name="productTests.ProductTests">
-            </class>
             <class name="productMarketTests.ProductMarketTests">
+            </class>
+            <class name="productTests.ProductTests">
             </class>
         </classes>
     </test>
