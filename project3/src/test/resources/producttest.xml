@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <test name="Product and ProductMarket Tests" >
+        <groups>
+            <define name="testgetter"/>
+            <run>
+                <include name="testgetter"/>
+            </run>
+        </groups>
+        <groups>
+            <define name="prices"/>
+            <run>
+                <include name="prices"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="productTests.ProductTests">
+            </class>
+            <class name="productMarketTests.ProductMarketTests">
+            </class>
+        </classes>
+    </test>
+</suite>
