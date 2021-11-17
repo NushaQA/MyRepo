@@ -10,7 +10,6 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <webDriver>chrome</webDriver>
         <url>https://parkavenue.ua/</url>
         <selenium.version>4.0.0</selenium.version>
     </properties>
@@ -56,10 +55,6 @@
                         <property>
                             <name>baseUrl</name>
                             <value>${url}</value>
-                        </property>
-                        <property>
-                            <name>driver</name>
-                            <value>${webDriver}</value>
                         </property>
                     </systemProperties>
                 </configuration>

@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 
 import static ua.parkavenue.driver.WebDriverManager.getWebdriver;
@@ -19,8 +17,6 @@ public class AbstractTest {
     @AfterAll
     public static void quitDriver(){
         driver.close();
-        //driver.quit();
+        driver.quit();
     }
-
-
 }
