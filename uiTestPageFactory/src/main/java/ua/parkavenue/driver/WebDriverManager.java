@@ -8,7 +8,6 @@ public class WebDriverManager {
     private static WebDriver driver;
 
     private WebDriverManager() {}
-
     public static WebDriver getWebdriver() {
         if (driver != null) {
             return driver;
